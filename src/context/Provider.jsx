@@ -6,7 +6,7 @@ const API_URL = 'https://restcountries.eu/rest/v2/all';
 function Provider({ children }) {
 
   const [data, setData] = useState({
-    countries: [],
+    countries: {},
     loading: true,
   });
 
@@ -14,7 +14,7 @@ function Provider({ children }) {
     const requestAPI = async () => {
       const result = await fetch(API_URL);
       const response = await result.json();
-      if(data.loading) return setData({...data, countries: response.countries, loading: false})
+      if(data.loading) return setData({...data, countries: response, loading: false})
     }
     requestAPI();
   });

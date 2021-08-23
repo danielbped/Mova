@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 
 const Context = createContext({
-  countries: [],
+  countries: {},
 })
 
 export default Context;

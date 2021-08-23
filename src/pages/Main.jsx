@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
-import Context from '../context/Context';
+import React from 'react';
+import Header from '../components/Header';
+import MainCountries from '../components/MainCountries';
 
 function Main () {
-  const { data } = useContext(Context);
-  console.log(data);
   return (
-    <h1>Mova</h1>
+    <main>
+      <Header />
+      <MainCountries />
+    </main>
   )
 }
 
