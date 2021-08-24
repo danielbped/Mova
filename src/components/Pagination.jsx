@@ -13,9 +13,14 @@ function Pagination() {
     setData({...data, currentPage: page})
   }
 
+  const paginationNumber = [
+    (currentPage <= 0 ? null : currentPage - 1), currentPage, (currentPage + 1)
+  ];
+
   return (
-    <div className="flex mx-8 flex-wrap">
-        {pages.map((page) => 
+    <div className="flex mx-8 justify-center">
+        {paginationNumber.map((page) => 
+          page !== null ? (
           <button
             type="button"
             onClick={ () => changePage(page) }
@@ -25,11 +30,13 @@ function Pagination() {
               p-1
               px-2
               text-purple-500
+              focus:outline-none
               ${currentPage === page && 'border'}
             `}
             >
             {page}
           </button>
+          ) : null
         )}
     </div>
   )

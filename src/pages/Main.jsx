@@ -1,11 +1,9 @@
 import React from 'react';
-import Header from '../components/Header';
 import Routes from '../Routes';
 
 function Main () {
   return (
-    <main>
-      <Header />
+    <main className="h-screen">
       <Routes />
     </main>
   )

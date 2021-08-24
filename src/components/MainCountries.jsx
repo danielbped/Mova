@@ -5,7 +5,7 @@ import Pagination from './Pagination';
 
 function MainCountries () {
   return (
-    <main>
+    <main className="h-full">
       <Search />
       <Countries />
       <Pagination />

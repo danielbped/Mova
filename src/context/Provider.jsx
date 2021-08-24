@@ -9,6 +9,9 @@ function Provider({ children }) {
     countries: {},
     currentPage: 0,
     loading: true,
+    filter: '',
+    option: '',
+    filtered: false,
   });
 
   useEffect(() => {
