@@ -7,6 +7,7 @@ function Provider({ children }) {
 
   const [data, setData] = useState({
     countries: {},
+    currentPage: 0,
     loading: true,
   });
 
@@ -20,7 +21,7 @@ function Provider({ children }) {
   });
 
   return (
-    <Context.Provider value={{ data }}>
+    <Context.Provider value={{ data, setData }}>
       { children }
     </Context.Provider>
   )

@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../components/Header';
-import MainCountries from '../components/MainCountries';
+import Routes from '../Routes';
 
 function Main () {
   return (
     <main>
       <Header />
-      <MainCountries />
+      <Routes />
     </main>
   )
 }

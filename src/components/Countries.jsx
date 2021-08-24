@@ -1,20 +1,18 @@
 import React, { useContext } from 'react';
 import Context from '../context/Context';
+import Loading from './Loading';
+import Country from './Country';
 
 function Countries() {
-  const { data: { countries, loading } } = useContext(Context);
-  const currentPage = 0;
-  if(loading) return <p>Carregando</p>;
-  const showCountries = [countries[0 + currentPage], countries[1 + currentPage], countries[2 + currentPage]];
+  const { data: { countries, loading, currentPage } } = useContext(Context);
+  const showCountries = [
+    countries[0 + (currentPage*3)], countries[1 + (currentPage*3)], countries[2 + (currentPage*3)]
+  ];
+  if(loading) return <Loading />;
   return (
     <section className="flex flex-wrap justify-center">
       {showCountries.map((country) => (
-        <div className="w-1/4 m-4" key={ country.name }>
-          <img
-            src={country.flag}
-            alt={ `${country.name} flag` }
-          />
-        </div>
+        <Country country={ country } />
       ))}
     </section>
   )
