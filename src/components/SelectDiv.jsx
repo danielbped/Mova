@@ -8,26 +8,29 @@ const SELECT_OPTIONS = [
   { name: "País", value: "country" },
   { name: "Região", value: "region" },
   { name: "Língua", value: "language" },
+  { name: "Capital", value: "capital" },
   { name: "Código de Ligação", value: "call-code" },
 ];
 
 function SelectArea() {
   const {
-    data: { countries, loading, filter },
+    data: { countries, loading },
+    filter: { filter }
   } = useContext(Context);
 
+  const options = countries;
   const SELECT_COUNTRY = loading
     ? "Carregando..."
-    : countries
-        .map(({ name }) => name)
+    : options
+        .map(({ alpha2Code }) => alpha2Code)
         .reduce(
           (array, item) => (array.includes(item) ? array : [...array, item]),
           []
         );
-
+  
   const SELECT_REGION = loading
     ? "Carregando..."
-    : countries
+    : options
         .map(({ region }) => region)
         .reduce(
           (array, item) => (array.includes(item) ? array : [...array, item]),
@@ -36,7 +39,7 @@ function SelectArea() {
 
   const SELECT_LANGUAGE = loading
     ? "Carregando..."
-    : countries
+    : options
         .map(({ languages }) => languages[0].name)
         .reduce(
           (array, item) => (array.includes(item) ? array : [...array, item]),
@@ -45,8 +48,17 @@ function SelectArea() {
 
   const SELECT_CALLCODE = loading
     ? "Carregando..."
-    : countries
+    : options
         .map(({ callingCodes }) => callingCodes[0])
+        .reduce(
+          (array, item) => (array.includes(item) ? array : [...array, item]),
+          []
+        );
+
+  const SELECT_CAPITAL = loading
+    ? "Carregando..."
+    : options
+        .map(({ capital }) => capital)
         .reduce(
           (array, item) => (array.includes(item) ? array : [...array, item]),
           []
@@ -67,6 +79,9 @@ function SelectArea() {
       break;
     case "call-code":
       selectOptions = SELECT(SELECT_CALLCODE);
+      break;
+    case "capital":
+      selectOptions = SELECT(SELECT_CAPITAL);
       break;
     default:
       selectOptions = SELECT();

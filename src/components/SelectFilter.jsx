@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import Context from '../context/Context';
 
 function SelectFilter({options}) {
-  const { data, setData } = useContext(Context);
+  const { filter, setFilter } = useContext(Context);
   const handleChangeFilter = ({ target: { value } }) => {
-    setData({ ...data, filter: value })
+    setFilter({ ...filter, filter: value })
   }
   return (
     <select

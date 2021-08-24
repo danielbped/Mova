@@ -8,6 +8,7 @@ function Countries() {
   const showCountries = [
     countries[0 + (currentPage*3)], countries[1 + (currentPage*3)], countries[2 + (currentPage*3)]
   ];
+ 
   if(loading) return <Loading />;
   return (
     <section className="flex flex-wrap justify-center items-center h-4/6">
