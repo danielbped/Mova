@@ -8,7 +8,7 @@ const API_URL = `https://restcountries.eu/rest/v2/alpha/`
 function CountryDetails(props) {
   const { data: { countries } } = useContext(Context);
   const [currentCountry, setCurrentCountry] = useState({
-    country: {},
+    country: '',
     loading: true,
   });
 
@@ -24,13 +24,13 @@ function CountryDetails(props) {
       if(currentCountry.loading) return setCurrentCountry(
         { ...currentCountry, country: response, loading: false }
       )
-    }
+    } 
     requestAPI();
   })
 
-  const findBorder = (countriesBorders) => countriesBorders.map(
-    (border) => countries.filter((country) => country.alpha3Code === border));
-  
+  const findBorder = (countriesBorders) => {
+    return countriesBorders.map((border) => countries.filter((country) => country.alpha3Code === border))
+  }
 
   if(currentCountry.loading) return <Loading />;
   const {
@@ -54,17 +54,12 @@ function CountryDetails(props) {
           <li>Região: { region }</li>
           <li>Sub-região: { subregion }</li>
           <li>População: { population }</li>
-          <li>Línguas: {languages.reduce(
-            (acc, curr) => (`${acc.name}, ${curr.name}`))}
-          </li>
+          <li>Línguas: {languages.reduce((acc, curr) => (`${acc.name}, ${curr.name}`), '')}</li>
         </ul>
       </div>
       <h2 className="m-6">Países Vizinhos</h2>
       <div className="flex">
-        {borders.length === 0 ? <p className="m-6">Este país não possui vizinhos.</p> 
-        : findBorder(borders).map(
-          (border) => <Country country={ border[0] } />
-          )}
+        {borders.length === 0 ? <p className="m-6">Este país não possui vizinhos.</p> : findBorder(borders).map((border) => <Country country={ border[0] } />)}
       </div>
     </main>
   );
