@@ -6,7 +6,7 @@ import Country from '../components/Country';
 const API_URL = `https://restcountries.eu/rest/v2/alpha/`
 
 function CountryDetails(props) {
-  const { data: { countries } } = useContext(Context);
+  const { filters: { filterOptions } } = useContext(Context);
   const [currentCountry, setCurrentCountry] = useState({
     country: '',
     loading: true,
@@ -29,7 +29,7 @@ function CountryDetails(props) {
   })
 
   const findBorder = (countriesBorders) => {
-    return countriesBorders.map((border) => countries.filter((country) => country.alpha3Code === border))
+    return countriesBorders.map((border) => filterOptions.filter((country) => country.alpha3Code === border))
   }
 
   if(currentCountry.loading) return <Loading />;
