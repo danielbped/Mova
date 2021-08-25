@@ -11,7 +11,6 @@ function Countries() {
     return [countries];
   }
 
- 
   if(loading) return <Loading />;
   return (
     <section className="flex flex-wrap justify-center items-center h-4/6">

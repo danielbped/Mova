@@ -9,8 +9,8 @@ function Routes() {
     <BrowserRouter>
       <Header />
       <Switch>
-        <Route exact path="/" component={ MainCountries } />
         <Route path="/countries/:id" render={ (props) => <CountryDetails {...props} /> } />
+        <Route exact path="/" component={ MainCountries } />
       </Switch>
     </BrowserRouter>
   )

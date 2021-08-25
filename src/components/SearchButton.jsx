@@ -12,12 +12,15 @@ function SearchButton () {
       type="button"
       onClick={ () => handleClickFiltered() }
       className="
-        bg-purple-500
+        bg-purple-800
         text-white
         m-8
         p-2
         px-4
-        rounded-2xl"
+        font-bold
+        rounded-2xl
+        focus:outline-none
+        hover:opacity-80 duration-500"
     >
       Pesquisar
     </button>

@@ -37,7 +37,7 @@ function SelectArea() {
     : options
         .map(({ languages }) => languages[0])
         .reduce(
-          (array, item) => (array.some((obj) => obj.name === item) || item === '' ? array : [...array, {name: item.name, value: item.iso639_1}]),
+          (array, item) => (array.some((obj) => obj.name === item.name) || item === '' ? array : [...array, {name: item.name, value: item.iso639_1}]),
           []
         );
 

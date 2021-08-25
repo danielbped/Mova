@@ -7,26 +7,26 @@ const API_URL = `https://restcountries.eu/rest/v2/alpha/`
 
 function CountryDetails(props) {
   const { filters: { filterOptions } } = useContext(Context);
+  const { match } = props;
+  const { params } = match;
+  const { id } = params;
+  const URL = `${API_URL}${id}`;
   const [currentCountry, setCurrentCountry] = useState({
     country: '',
     loading: true,
   });
 
   useEffect(() => {
-    const { match } = props;
-    const { params } = match;
-    const { id } = params;
-    const URL = `${API_URL}${id}`;
 
     const requestAPI = async () => {
       const result = await fetch(URL);
       const response = await result.json();
-      if(currentCountry.loading) return setCurrentCountry(
+      setCurrentCountry(
         { ...currentCountry, country: response, loading: false }
       )
     } 
     requestAPI();
-  })
+  }, [URL, currentCountry])
 
   const findBorder = (countriesBorders) => {
     return countriesBorders.map((border) => filterOptions.filter((country) => country.alpha3Code === border))

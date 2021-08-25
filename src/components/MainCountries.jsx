@@ -11,6 +11,6 @@ function MainCountries () {
       <Pagination />
     </main>
   )
-};
+}
 
 export default MainCountries;

@@ -10,7 +10,7 @@ function Header () {
         flex
         justify-between
         color: bg-gray-200
-        shadow-md"
+        shadow-xl"
       >
       <div>
         <img
@@ -22,7 +22,7 @@ function Header () {
         />
       </div>
         <div>
-          <Link to="/">
+          <Link style={{ textDecoration: 'none' }} to="/">
             <button
               className="
                 flex
@@ -30,13 +30,16 @@ function Header () {
                 p-2
                 pr-2
                 border
-                border-4
-                border-purple-500
+                border-8
+                border-purple-800
+                font-bold
+                no-underline
+                text-purple-800
                 focus:outline-none
-                text-purple-500"
+                hover:opacity-80 duration-500"
               type="button"
             >
-              <img className="w-5 mx-2 self-center text-purple-500" src={ ArrowBack } alt="back" />
+              <img className="w-5 mx-2 self-center text-purple-800" src={ ArrowBack } alt="back" />
               Voltar
             </button>
           </Link>

@@ -15,6 +15,7 @@ function SelectFilterOption({options, loading}) {
       p-2
       px-10
       bg-white
+      focus:outline-none
       shadow-md"
       >
       {!loading && options.map((option) => (

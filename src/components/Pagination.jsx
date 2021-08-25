@@ -1,9 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Context from '../context/Context';
 
 function Pagination() {
   const { data: { countries, currentPage }, setData, data } = useContext(Context);
-  const totalPages = Math.floor(countries.length/3);
+  const [totalPages, setTotalPages] = useState(countries.length/3)
+
+  useEffect(() => {
+    setTotalPages(countries.length/3)
+    console.log(totalPages);
+  }, [countries])
+
   let pages = [];
   for(let index = 0; index <= totalPages; index += 1) {
     pages.push(index);
@@ -30,9 +36,11 @@ function Pagination() {
               m-1
               p-1
               px-2
-              text-purple-500
+              text-purple-800
+              font-bold
               focus:outline-none
-              ${currentPage === page && 'border'}
+              hover:opacity-80 duration-500
+              ${currentPage === page && "bg-purple-800 text-white border rounded-xl"}
             `}
             >
             {page}
