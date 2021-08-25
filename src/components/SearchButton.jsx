@@ -2,13 +2,11 @@ import React, { useContext } from 'react';
 import Context from '../context/Context';
 
 function SearchButton () {
-  const { data, setData, setFilter, filter, API_URL } = useContext(Context);
+  const { data, setData } = useContext(Context);
   const handleClickFiltered = async () => {
-    const response = await fetch(API_URL);
-    const result = await response.json();
-    setFilter({ ...filter, filtered: true });
-    setData({...data, loading: true, countries: [result]});
+    setData({...data, loading: true});
   }
+
   return (
     <button
       type="button"

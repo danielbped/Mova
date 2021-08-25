@@ -25,6 +25,7 @@ function Pagination() {
             type="button"
             onClick={ () => changePage(page) }
             name={ page }
+            key={ page }
             className={`
               m-1
               p-1

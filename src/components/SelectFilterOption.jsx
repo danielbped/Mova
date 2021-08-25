@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import Context from '../context/Context';
 
 function SelectFilterOption({options, loading}) {
-  const { filter, setFilter } = useContext(Context);
+  const { filters, setFilter } = useContext(Context);
   const handleChangeFilterOption = ({ target: { value } }) => {
-    setFilter({ ...filter, option: value })
+    setFilter({ ...filters, option: value })
   }
   return (
     <select
@@ -18,8 +18,8 @@ function SelectFilterOption({options, loading}) {
       shadow-md"
       >
       {!loading && options.map((option) => (
-        option !== '' && <option value={ option } key={ option }>
-          { option }
+        option !== '' && <option value={ option.value } key={ option }>
+          { option.name }
         </option>
       ))}
     </select>

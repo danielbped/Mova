@@ -14,53 +14,48 @@ const SELECT_OPTIONS = [
 
 function SelectArea() {
   const {
-    data: { countries, loading },
-    filter: { filter }
+    filters: { filter, filterOptions, loaded },
   } = useContext(Context);
 
-  const options = countries;
-  const SELECT_COUNTRY = loading
+  const options = filterOptions;
+  const SELECT_COUNTRY = !loaded
     ? "Carregando..."
     : options
-        .map(({ alpha2Code }) => alpha2Code)
+        .map(({ alpha2Code, name }) => [name, alpha2Code])
         .reduce(
-          (array, item) => (array.includes(item) ? array : [...array, item]),
+          (array, item) => (array.some((obj) => obj.name === item) || item === '' ? array : [...array, {name: item[0], value: item[1]}]),
           []
         );
-  
-  const SELECT_REGION = loading
+  const SELECT_REGION = !loaded
     ? "Carregando..."
     : options
         .map(({ region }) => region)
-        .reduce(
-          (array, item) => (array.includes(item) ? array : [...array, item]),
-          []
+        .reduce((array, item) => (array.some((obj) => obj.name === item) || item === '' ? array : [...array, {name: item, value: item}]), []
         );
-
-  const SELECT_LANGUAGE = loading
+  const SELECT_LANGUAGE = !loaded
     ? "Carregando..."
     : options
-        .map(({ languages }) => languages[0].name)
+        .map(({ languages }) => languages[0])
         .reduce(
-          (array, item) => (array.includes(item) ? array : [...array, item]),
+          (array, item) => (array.some((obj) => obj.name === item) || item === '' ? array : [...array, {name: item.name, value: item.iso639_1}]),
           []
         );
 
-  const SELECT_CALLCODE = loading
+  const SELECT_CALLCODE = !loaded
     ? "Carregando..."
     : options
         .map(({ callingCodes }) => callingCodes[0])
         .reduce(
-          (array, item) => (array.includes(item) ? array : [...array, item]),
+          (array, item) => (array.some((obj) => obj.name === item) || item === '' ? array : [...array, {name: item, value: item}]),
           []
         );
 
-  const SELECT_CAPITAL = loading
+  const SELECT_CAPITAL = !loaded
     ? "Carregando..."
     : options
         .map(({ capital }) => capital)
         .reduce(
-          (array, item) => (array.includes(item) ? array : [...array, item]),
+          (array, item) => (array.some((obj) => obj.name === item) || item === '' ? array : [...array, {name: item, value: item}]),
           []
         );
 
