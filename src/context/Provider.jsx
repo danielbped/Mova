@@ -31,7 +31,7 @@ function Provider({ children }) {
           setAPI(`https://restcountries.eu/rest/v2/lang/${filter.option}`)
           break;
         case 'call-code':
-          setAPI(`https://restcountries.eu/rest/v2/region/${filter.option}`)
+          setAPI(`https://restcountries.eu/rest/v2/callingcode/${filter.option}`)
           break;
         case 'capital':
           setAPI(`https://restcountries.eu/rest/v2/capital/${filter.option}`)
@@ -53,7 +53,7 @@ function Provider({ children }) {
       }
     }
     requestAPI();
-  });
+  }, [API, data, filters]);
 
   useEffect(() => {
     switchAPI(filters)

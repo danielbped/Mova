@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import Context from '../context/Context';
 import Loading from '../components/Loading';
 import Country from '../components/Country';
@@ -6,7 +7,13 @@ import Country from '../components/Country';
 const API_URL = `https://restcountries.eu/rest/v2/alpha/`
 
 function CountryDetails(props) {
-  const { filters: { filterOptions } } = useContext(Context);
+  const {
+    filters: { filterOptions },
+    filters,
+    setFilter,
+    data,
+    setData,
+  } = useContext(Context);
   const { match } = props;
   const { params } = match;
   const { id } = params;
@@ -32,6 +39,11 @@ function CountryDetails(props) {
     return countriesBorders.map((border) => filterOptions.filter((country) => country.alpha3Code === border))
   }
 
+  const handleClick = (regionRedirect) => {
+    setData({...data, loading: true})
+    setFilter({...filters, filter: 'region', option: regionRedirect });
+  }
+
   if(currentCountry.loading) return <Loading />;
   const {
     name,
@@ -51,7 +63,17 @@ function CountryDetails(props) {
         <ul>
           <li>Nome: { name }</li>
           <li>Capital: { capital }</li>
-          <li>Região: { region }</li>
+          <li>
+            Região:
+            <Link to="/">
+              <button
+                type="button"
+                onClick={ () => handleClick(region) }
+                >
+                { region }
+              </button>
+            </Link>
+          </li>
           <li>Sub-região: { subregion }</li>
           <li>População: { population }</li>
           <li>Línguas: {languages.map(
