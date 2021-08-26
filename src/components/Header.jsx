@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import MovaSVG from '../SVG/footer_mova.svg'
 import ArrowBack from '../SVG/arrow_back.svg';
 
@@ -21,6 +21,8 @@ function Header () {
           alt="Mova"
         />
       </div>
+      {
+        useLocation().pathname.includes('/countries/') ?
         <div>
           <Link style={{ textDecoration: 'none' }} to="/">
             <button
@@ -43,7 +45,8 @@ function Header () {
               Voltar
             </button>
           </Link>
-        </div>
+        </div> : null
+      }
     </header>
   )
 }
