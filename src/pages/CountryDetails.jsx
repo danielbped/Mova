@@ -54,7 +54,15 @@ function CountryDetails(props) {
           <li>Região: { region }</li>
           <li>Sub-região: { subregion }</li>
           <li>População: { population }</li>
-          <li>Línguas: {languages.reduce((acc, curr) => (`${acc.name}, ${curr.name}`), '')}</li>
+          <li>Línguas: {languages.map(
+            (a, index) => {
+              if(index === 0 && index.length > 1) return `${a.name}, `
+              if(index === languages.length-1) return `${a.name}.`
+              return `${a.name}, `
+            }
+            
+            )}
+          </li>
         </ul>
       </div>
       <h2 className="m-6">Países Vizinhos</h2>
