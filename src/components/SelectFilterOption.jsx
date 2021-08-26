@@ -19,7 +19,7 @@ function SelectFilterOption({options, loading}) {
       shadow-md"
       >
       {!loading && options.map((option) => (
-        option !== '' && <option value={ option.value } key={ option }>
+        option !== '' && <option value={ option.value } key={ option.name }>
           { option.name }
         </option>
       ))}

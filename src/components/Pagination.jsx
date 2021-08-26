@@ -7,7 +7,6 @@ function Pagination() {
 
   useEffect(() => {
     setTotalPages(countries.length/3)
-    console.log(totalPages);
   }, [countries])
 
   let pages = [];
@@ -19,13 +18,16 @@ function Pagination() {
     setData({...data, currentPage: page})
   }
 
-  const paginationNumber = [
-    (currentPage <= 0 ? null : currentPage - 1), currentPage, (currentPage + 1)
-  ];
+  const paginationNumber = () => {
+    if(pages.length <= 3) {
+      return [0]
+    }
+    return [(currentPage <= 0 ? null : currentPage - 1), currentPage, currentPage === totalPages-1 ? null : (currentPage + 1)]
+  }
 
   return (
     <div className="flex mx-8 justify-center">
-        {paginationNumber.map((page) => 
+        {paginationNumber().map((page) => 
           page !== null ? (
           <button
             type="button"
