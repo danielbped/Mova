@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Projeto Bandeiras
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Projeto realizado como fase de um processo seletivo
+  - O projeto teve como objetivo desenvolver uma aplicação utilizando uma API de bandeiras de todos os países, incluindo detalhes e informações sobre cada um.
+  - Ferramentas utilizadas:
+    - ReactJS;
+    - React Hooks;
+    - Tailwind CSS;
+  - [API utilizada.](https://restcountries.eu/#api-endpoints-code)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Como instalar
+  1 - Abra o terminal e crie um diretório de sua preferência com o comando **mkdir**:
+  
+    mkdir projeto-bandeiras
+    
+  2 - Entre no diretório que acabou de criar e depois clone o projeto com o comando **git clone**:
+  
+    cd projeto-bandeiras
+    git clone git@github.com:danielbped/Mova.git
+    cd Mova
+    
+  3 - Para o projeto funcionar na sua máquia, será necessário instalar suas dependências, para isso, utilize **npm install**:
+  
+    npm install
+    
+  4 - Pronto, agora o projeto está pronto para ser rodado localmente, utilizando o comando **npm start**:
+  
+    npm start
+  
+ ## Resultado:
+ 
+ ## Requisitos do projeto:
+ - [x] Selecionar um tipo de filtro: Região, Capital, Língua, Código de Ligação. O Default será País. Esse Select define as propriedades do segundo select e a URL a ser selecionada.
+ - [x] Para cada requisição, uma URL diferente será utilizada.
+  - Pesquisar por [Região]()
+  - Pesquisar por [Capital]()
+  - Pesquisar por [Língua]()
+  - Pesquisar por [País]()
+  - Pesqusiar por [Código de Ligação]()
