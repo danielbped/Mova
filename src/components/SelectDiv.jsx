@@ -83,7 +83,13 @@ function SelectArea() {
   }
 
   return (
-    <div className='flex'>
+    <div className="
+      flex
+      flex-col
+      justify-between
+      lg:flex-row
+      lg:justify-start
+      w-full">
       <SelectFilter options={SELECT_OPTIONS} />
       {filter !== "" && <SelectFilterOption options={selectOptions} />}
     </div>

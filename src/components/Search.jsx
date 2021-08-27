@@ -4,7 +4,7 @@ import SearchButton from './SearchButton';
 
 function Search() {
   return (
-    <div className="flex justify-between">
+    <div className="flex xl:justify-between xl:flex-row sm:flex-col">
       <SelectDiv />
       <SearchButton />
     </div>

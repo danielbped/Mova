@@ -13,7 +13,14 @@ function Countries() {
 
   if(loading) return <Loading />;
   return (
-    <section className="flex flex-wrap justify-center items-center h-4/6">
+    <section className="
+      flex
+      items-center
+      xl:flex-row
+      xl:flex-wrap
+      xl:justify-center
+      xl:h-4/6
+      sm: flex-col">
       {showCountries().map((country) => (
         <Country key={ country.name } country={ country } />
       ))}

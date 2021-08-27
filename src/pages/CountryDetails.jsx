@@ -57,14 +57,13 @@ function CountryDetails(props) {
   } = currentCountry.country;
   return (
     <main>
-      <h1 className="m-6">{ name }</h1>
-      <div className="flex items-center">
+      <div className="flex items-center sm:flex-col">
       <img className="m-6 w-1/2" src={ flag } alt={ `${name} flag` } />
         <ul>
           <li>Nome: { name }</li>
           <li>Capital: { capital }</li>
           <li>
-            Região:
+            Região: 
             <Link to="/">
               <button
                 type="button"
