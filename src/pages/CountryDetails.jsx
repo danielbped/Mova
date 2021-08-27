@@ -57,12 +57,12 @@ function CountryDetails(props) {
   } = currentCountry.country;
   return (
     <main>
-      <div className="flex items-center sm:flex-col">
+      <div className="flex flex-col items-center sm:flex-row">
       <img className="m-6 w-1/2" src={ flag } alt={ `${name} flag` } />
         <ul>
-          <li>Nome: { name }</li>
-          <li>Capital: { capital }</li>
-          <li>
+          <li className="text-2xl">Nome: { name }</li>
+          <li className="text-2xl">Capital: { capital }</li>
+          <li className="text-2xl">
             Região: 
             <Link to="/">
               <button
@@ -73,9 +73,9 @@ function CountryDetails(props) {
               </button>
             </Link>
           </li>
-          <li>Sub-região: { subregion }</li>
-          <li>População: { population }</li>
-          <li>Línguas: {languages.map(
+          <li className="text-2xl">Sub-região: { subregion }</li>
+          <li className="text-2xl">População: { population }</li>
+          <li className="text-2xl">Línguas: {languages.map(
             (a, index) => {
               if(index === 0 && index.length > 1) return `${a.name}, `
               if(index === languages.length-1) return `${a.name}.`
