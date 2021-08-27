@@ -29,6 +29,30 @@
   
  ## Resultado:
  
+ ### Página Inicial<br>
+ ![Página Inicial](/img/main.jpg)
+ 
+ ### Página de Detalhes<br>
+ ![Página de Detalhes](/img/details.jpg)
+ 
+ ### Filtros
+ -  Filtrando por Capital<br>
+ ![Filtrando por Capital](/img/filterCapital.jpg)
+ -  Filtrando por Código de ligação<br>
+ ![Filtrando por código de ligação](/img/filterCode.jpg)
+ - Filtrando por País<br>
+ ![Filtrando por País](/img/filterCountry.jpg)
+  - Filtrando por Língua<br>
+ ![Filtrando por Língua](/img/filterLanguage.jpg)
+  - Filtrando por Região<br>
+ ![Filtrando por Região](/img/filterRegion.jpg)
+ 
+ ### Responsividade
+ - Página Inicial<br>
+ ![Página Inicial Responsiva](/img/responsiveMain.jpg)
+ - Página de Detalhes<br>
+ ![Página de Detalhes Reponsiva](/img/responsiveDetails.jpg)
+ 
  ## Requisitos do projeto:
  - [x] Selecionar um tipo de filtro: Região, Capital, Língua, Código de Ligação. O Default será País. Esse Select define as propriedades do segundo select e a URL a ser selecionada.
  - [x] Para cada requisição, uma URL diferente será utilizada.
