@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Mova/static/css/main.643dfac5.chunk.css",
+    "main.js": "/Mova/static/js/main.e1b1ce39.chunk.js",
+    "main.js.map": "/Mova/static/js/main.e1b1ce39.chunk.js.map",
+    "runtime-main.js": "/Mova/static/js/runtime-main.a6f1cace.js",
+    "runtime-main.js.map": "/Mova/static/js/runtime-main.a6f1cace.js.map",
+    "static/css/2.3fec6b3f.chunk.css": "/Mova/static/css/2.3fec6b3f.chunk.css",
+    "static/js/2.942eb226.chunk.js": "/Mova/static/js/2.942eb226.chunk.js",
+    "static/js/2.942eb226.chunk.js.map": "/Mova/static/js/2.942eb226.chunk.js.map",
+    "index.html": "/Mova/index.html",
+    "static/css/2.3fec6b3f.chunk.css.map": "/Mova/static/css/2.3fec6b3f.chunk.css.map",
+    "static/css/main.643dfac5.chunk.css.map": "/Mova/static/css/main.643dfac5.chunk.css.map",
+    "static/js/2.942eb226.chunk.js.LICENSE.txt": "/Mova/static/js/2.942eb226.chunk.js.LICENSE.txt",
+    "static/media/arrow_back.c26c0992.svg": "/Mova/static/media/arrow_back.c26c0992.svg",
+    "static/media/footer_mova.43963ad3.svg": "/Mova/static/media/footer_mova.43963ad3.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a6f1cace.js",
+    "static/css/2.3fec6b3f.chunk.css",
+    "static/js/2.942eb226.chunk.js",
+    "static/css/main.643dfac5.chunk.css",
+    "static/js/main.e1b1ce39.chunk.js"
+  ]
+}
