@@ -6,7 +6,7 @@ import CountryDetails from './pages/CountryDetails';
 
 function Routes() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={ process.env.PUBLIC_URL }>
       <Header />
       <Switch>
         <Route path="/countries/:id" render={ (props) => <CountryDetails {...props} /> } />
